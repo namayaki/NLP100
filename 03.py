@@ -4,10 +4,10 @@
 
 import re
 
-str = 'Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics.'
-str = re.sub(r'[,|.]', '', str)
+STR = 'Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics.'
+
 list = []
-for word in str.split(' '):
+for word in re.sub(r'[,|.]', '', STR).split(' '):
     list.append(len(word))
 
 print(list)
