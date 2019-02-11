@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-# 与えられたシーケンス（文字列やリストなど）からn-gramを作る関数を作成せよ．
-# この関数を用い，"I am an NLPer"という文から単語bi-gram，文字bi-gramを得よ
+# "paraparaparadise"と"paragraph"に含まれる文字bi-gramの集合を，それぞれ, XとYとして求め，
+# XとYの和集合，積集合，差集合を求めよ．さらに，'se'というbi-gramがXおよびYに含まれるかどうかを調べよ．
 
-STR = 'I am an NLPer'
+STR1 = 'paraparaparadise'
+STR2 = 'paragraph'
 
 def generate_ngram(str, n):
     list = []
@@ -10,5 +11,11 @@ def generate_ngram(str, n):
         list.append(str[i:i+n])
     return list
 
-print(generate_ngram(STR.split(' '), 2))
-print(generate_ngram(STR, 2))
+X = set(generate_ngram(STR1, 2))
+Y = set(generate_ngram(STR2, 2))
+
+print(set.union(X,Y))
+print(set.intersection(X,Y))
+print(set.difference(X,Y))
+print('se' in X)
+print('se' in Y)
