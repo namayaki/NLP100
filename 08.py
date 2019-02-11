@@ -4,8 +4,6 @@
 # ・その他の文字はそのまま出力
 # この関数を用い，英語のメッセージを暗号化・復号化せよ．
 
-import re
-
 def cipher(txt):
     result = ''
     for c in txt:
